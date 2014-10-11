@@ -89,10 +89,13 @@ void keyPressed() {
     } else {
       // Otherwise, concatenate the String
       // Each character typed by the user is added to the end of the String variable.
-      typing = typing + key;
+      //      typing = typing + key;
       if (key=='m') {
         typing = removeLastChar(typing);
         println(typing);
+        //typing = typing + key;
+      } else {
+        typing = typing + key;
       }
     }
   }
@@ -100,7 +103,12 @@ void keyPressed() {
 }
 
 public static String removeLastChar(String str) {
-  return str.substring(0, str.length()-1);
+  if (str.length() > 0) {
+    return str.substring(0, str.length()-1);
+  } else {
+    println ("nothing to delete");
+    return str;
+  }
 }
 
 
